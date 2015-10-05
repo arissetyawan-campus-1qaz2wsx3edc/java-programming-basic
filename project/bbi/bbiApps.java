@@ -44,13 +44,13 @@ class bbiApps extends JFrame implements ActionListener {
         btn3 = new JButton("X");
         
         //left, top, width, height
-        lblTitle.setBounds(175, 25, 250, 75); // menghitung txtWeight badan ideal
-        lblName.setBounds(50, 100, 100, 25); // txtName
-        lblHeight.setBounds(50, 125, 100, 25); // txtHeight badan
-        lblWeight.setBounds(50, 150, 100, 25); // txtWeight badan
-        lblCm.setBounds(235, 125, 50, 25); // cm
-        lblKg.setBounds(235, 150, 50, 25); // kg
-        lblResult.setBounds(175, 200, 150, 25); // idealkah badan anda
+        lblTitle.setBounds(175, 25, 250, 75);
+        lblName.setBounds(50, 100, 100, 25);
+        lblHeight.setBounds(50, 125, 100, 25);
+        lblWeight.setBounds(50, 150, 100, 25);
+        lblCm.setBounds(235, 125, 50, 25);
+        lblKg.setBounds(235, 150, 50, 25);
+        lblResult.setBounds(175, 200, 150, 25);
 
         txtName.setBounds(175, 100, 200, 25);
         txtHeight.setBounds(175, 125, 50, 25);
@@ -59,9 +59,9 @@ class bbiApps extends JFrame implements ActionListener {
         result.setEnabled(false);
         ideal.setBounds(50, 225, 400, 25);
 
-        btn1.setBounds(50, 350, 133, 50); // idealkah
-        btn2.setBounds(183, 350, 133, 50); // coba lagi
-        btn3.setBounds(400, 350, 50, 50); // keluar
+        btn1.setBounds(50, 350, 133, 50);
+        btn2.setBounds(183, 350, 133, 50);
+        btn3.setBounds(400, 350, 50, 50);
 
         btn1.addActionListener(this);
         btn2.addActionListener(this);
