@@ -12,7 +12,7 @@ import java.util.Date;
 
 
 class bbiApps extends JFrame implements ActionListener {
-    private JLabel lblTitle,lblName,lblHeight, lblWeight,lblCm,lblKg,lblResult,lblTodo;
+    private JLabel lblTitle,lblName,lblHeight, lblWeight,lblCm,lblKg,lblResult;
     private JTextField txtName,txtHeight,txtWeight,result,ideal,txtAdvice;
     private JButton btn1,btn2,btn3;
     private Double myHeight, myWeight, myResult;
