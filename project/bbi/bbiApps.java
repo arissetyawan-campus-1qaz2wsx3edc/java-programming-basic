@@ -10,6 +10,7 @@ import javax.swing.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+
 class bbiApps extends JFrame implements ActionListener {
     private JLabel lblTitle,lblName,lblHeight, lblWeight,lblCm,lblKg,lblResult,lblTodo;
     private JTextField txtName,txtHeight,txtWeight,result,ideal,txtAdvice;
@@ -31,14 +32,12 @@ class bbiApps extends JFrame implements ActionListener {
         lblCm = new JLabel("Cm");
         lblKg = new JLabel("Kg");
         lblResult = new JLabel("Calculation Result");
-        lblTodo = new JLabel("TODO");
 
         txtName = new JTextField();
         txtHeight = new JTextField();
         txtWeight = new JTextField();
         result = new JTextField();
         ideal = new JTextField();
-        txtAdvice = new JTextField();
 
         btn1 = new JButton("Ready?");
         btn2 = new JButton("Reset Fields");
@@ -75,14 +74,12 @@ class bbiApps extends JFrame implements ActionListener {
         container.add(lblCm);
         container.add(lblKg);
         container.add(lblResult);
-        container.add(lblTodo);
 
         container.add(txtName);
         container.add(txtHeight);
         container.add(txtWeight);
         container.add(result);
         container.add(ideal);
-        container.add(txtAdvice);
 
         container.add(btn1);
         container.add(btn2);
@@ -115,21 +112,20 @@ class bbiApps extends JFrame implements ActionListener {
             txtName.requestFocus(true);
         } else {
             myHeight = Double.parseDouble(txtHeight.getText());
-            if (myHeight <= 110){
-               JOptionPane.showMessageDialog(null, "Only valid for height more than 110 centimeters");
+            if (myHeight < 100){
+               JOptionPane.showMessageDialog(null, "Only valid for height more than 100 centimeters");
                txtHeight.requestFocus(true);
             }
             else{
               myWeight = Double.parseDouble(txtWeight.getText());
-              myResult = (myHeight-110)*1.1;
-              double a = 1.1 * myWeight;
-              double b = 0.9 * myWeight;
+              //(tinggi badan – 100) – (15% x (tinggi badan – 100))
+              double myResult = (myHeight-100) - ((15/100.0) * (myHeight - 100));
 
-              if (myResult > a) {
-                  ideal.setText(txtName.getText() + ", you are fat :)");
+              if (myResult < myWeight) {
+                  ideal.setText(txtName.getText() + ", you are fat. Try to reduce "+ String.valueOf(myWeight-myResult) + "Kg");
                   result.setText(String.valueOf(myResult));
-              } else if(myResult < b) {
-                  ideal.setText(txtName.getText() + ", kamu kuyus deh :D");
+              } else if(myResult > myWeight) {
+                  ideal.setText(txtName.getText() + ", kamu kuyus deh :D. Try to add " + String.valueOf(myResult-myWeight) + "Kg");
                   result.setText(String.valueOf(myResult));
               }
               else {
@@ -140,10 +136,10 @@ class bbiApps extends JFrame implements ActionListener {
            
         }
     }
- 
- public static void main(String[] args) {
-        bbiApps ui = new bbiApps();
-        ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    }
+
+   public static void main(String[] args) {
+          bbiApps ui = new bbiApps();
+          ui.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      }
 }
 
