@@ -2,9 +2,9 @@
 *  oct 5, 2015
 *  calculate your ideal weights
 */
-package bbi;
+package bbi; // membuat dalam package dgn directory bernama bbi
 
-import java.awt.*;
+import java.awt.*; 
 import java.awt.event.*;
 import javax.swing.*;
 import java.text.SimpleDateFormat;
