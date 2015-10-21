@@ -51,7 +51,7 @@ Yang dinilai:
 $javac Halo.java (Salah)
 
 
-Identifier digunakan untuk penamaan class, package, variable dan fungsi/method
+inget lagi; Identifier digunakan untuk penamaan class, package, variable dan fungsi/method
 
 
 
