@@ -3,6 +3,7 @@
 Yg dinilai: Kerapihan UI, validasi input, Hasil Kalkulasi, Commentar tiap baris kode.
 
 ### 3C
+
 #### 1.
 
 #### 2.laju inflasi (nilai uang/barang pada tahun sekian ataupun tahun yg lalu.
@@ -13,6 +14,7 @@ Yg dinilai: Kerapihan UI, validasi input, Hasil Kalkulasi, Commentar tiap baris 
   3. c
   4. d
   5. e
+
 #### 3.hitung pajak kendaraan tahunan
   input: pajak pokok, asuransi fixed, bulan ke berapa, tarif denda per bulan fixed
   output: total denda, total bayar
@@ -21,6 +23,7 @@ Yg dinilai: Kerapihan UI, validasi input, Hasil Kalkulasi, Commentar tiap baris 
   3. c
   4. d
   5. e
+
 #### 4.perhitungan jumlah bayar suatu barang dikasir
   input: harga jual pokok, nilai diskon, diskon qty, jumlah barang yg dibeli
   ouput: total diskon, total bayar
@@ -29,6 +32,7 @@ Yg dinilai: Kerapihan UI, validasi input, Hasil Kalkulasi, Commentar tiap baris 
   3. c
   4. d
   5. e
+
 #### 5.hitung gaji(nilai gaji yg diterima dari seorang bergaji X.
   input: gaji pokok, total jam lembur, tidak masuk berapa kali, potongan per tidak masuk, tarif lembur.
   output: total potongan, total lembur, total terima
@@ -39,6 +43,7 @@ Yg dinilai: Kerapihan UI, validasi input, Hasil Kalkulasi, Commentar tiap baris 
   5. e
 
 ### 3D:
+
 #### 1.a
 
 #### 2.b 
