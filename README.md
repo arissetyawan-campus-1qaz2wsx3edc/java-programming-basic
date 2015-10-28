@@ -46,12 +46,28 @@ Yg dinilai: Kerapihan UI, validasi input, Hasil Kalkulasi, Commentar tiap baris 
   4. d
   5. e
 
+
+
+
 ### 3D:
 
-#### 1.a
+#### 1. Syarat mendapat beasiswa suatu yayasan
+   * input: income ortu, nilai IPK semester sebelumnya, toefl min, kehadiran
+   * ouput: dapat atau tidak, jenis beasiswa apa kalo dapat 
+    
+#### 2. Estimasi penyelesaian project jalan raya
+   * input: panjang jalan, lebar jalan, kecepatan per pekerja (luas m2), jumlah pekerja, pekerja yg tidak masuk
+   * output: waktu selesai
 
-#### 2.b 
+#### 3. Perhitungan bayar bensin
+   * input: harga pertamax perliter, premium, solar, pertalite, plus, banyaknya
+   * output: total bayar
 
-#### 3.c
+#### 4. Sistem perhitungan pinjam di koperasi
+   * input: jumlah pinjaman, lama pinjam (bulan), saldo, bunga
+   * output: cicilan perbulan dan boleh tidaknya.
 
-#### 4.d
+#### 5. perhitungan bayar di toko online
+   * input: harga brg, nama brg, ongkir per KG, total berat dalam kilo, ppn
+   * output: jumlah bayar
+
