@@ -173,7 +173,7 @@ class ArissanRobot
          {
             this.verbose("energy level < working energy");
             this.gameOver();
-            this.chargingOn();
+            //this.chargingOn();
          }
          else
          {
@@ -191,7 +191,7 @@ class ArissanRobot
             }
             else
             {           
-             verbose("amo stock < 0");
+             verbose("amo stock <= 0");
              verbose("please reload amo");
             }
          }
@@ -262,6 +262,7 @@ class ArissanRobot
   protected void chargingOn(){
     this.verbose("charging...");
     this.charging = true;
+    
   }
 
   protected void resumeStats(){
@@ -277,7 +278,7 @@ class ArissanRobot
     line();
   }
 
-  JavaRobot(String name)
+  ArissanRobot(String name)
   {
     this.line();
     this.verbose("Hello...");
@@ -288,3 +289,38 @@ class ArissanRobot
 
 
 }
+
+/* Soal,
+jawaban dikumpulkan dengan file yg sudah direvisi, kumpulkan ke email:
+arissetyawan.email@gmail.com
+subject email: NIM - nama
+file diattached dalam email
+terlambat lebih dari 10 menit, tidak diterima.
+
+>> revisi program diatas agar <<
+
+1) saya dapat compile dan run menjadi sbb:
+>>(point 10);
+$ javac uts/NamaAnda.java
+$ java uts.NamaAnda
+
+2) tiap kali isi amunisi /reload amunisi 'reloadAmo' ada kata2 "amunisi habis, sedang reload!"
+>>(point 10);
+
+3) agar batas energy level minimal robot bisa berjalan adalah 10;
+>>(point 10);
+
+4) agar tiap kali robot menembak maka amunisanya kurang 4 dari sebelumnya, dan nyawanya kurang 2 dari sebelumnya;
+>>(point 20);
+
+5) agar tiap ada musuh yg terdeteksi dibelakang maka dia akan muter kanan, kanan bukan kiri, kiri
+>>(point 20);
+
+6) agar kalo ada musuh didepan dia mencetak "apa kabar ? sudah siap tempur?"
+>>(point 10);
+
+7) buat satu fungsi /method yg dapat dipanggil dalam robot turunan (yaitu nama anda). method itu berasal dari ArissanRobot. namai method tersebut dengan "sisaMenembak()",
+yg mana fungsi itu mencetak "sisa kesempatan menembak = sisa amunisi  / 4"
+misal keluarannya: "sisa kesempatan menembak: 4 kali"
+>>(point 20);
+*/
