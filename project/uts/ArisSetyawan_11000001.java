@@ -4,11 +4,11 @@
 * arissetyawan.email@gmail.com
 */
 
-package operators;
+package uts;
 
-public class AndroRobot extends ArissanRobot{
+public class ArisSetyawan_11000001 extends ArissanRobot{ // jawaban soal nomer 1;
    public static void main(String[] argv){
-      AndroRobot ar_0 = new AndroRobot();
+      ArisSetyawan_11000001  ar_0 = new ArisSetyawan_11000001();
       ar_0.setPower(false);
       ar_0.setEnergyLevel(100);
       ar_0.setAmoStock(100);
@@ -17,13 +17,13 @@ public class AndroRobot extends ArissanRobot{
       ar_0.fireEnemy();
       ar_0.fireEnemy();
       
-      AndroRobot ar = new AndroRobot();
+      ArisSetyawan_11000001 ar = new ArisSetyawan_11000001();
       ar.setPower(true);
       ar.setEnergyLevel(100);
       ar.setAmoStock(100);
       ar.resumeStats();
       ar.respondToDanger();
-      
+      ar.sisaMenembak(); //jawaban pelengkap nomer 7 //jawaban untuk membuktikan    
       ar.printLine();
       ar.setEnemy(true, 0);
       ar.respondToDanger();
@@ -57,6 +57,8 @@ public class AndroRobot extends ArissanRobot{
       ar.fireEnemy();
       ar.fireEnemy();
       ar.fireEnemy();
+      ar.sisaMenembak(); //jawaban pelengkap nomer 7 //jawaban untuk membuktikan    
+
 
       ar.printLine();
       ar.setEnemy(true, 1);
@@ -65,7 +67,7 @@ public class AndroRobot extends ArissanRobot{
       ar.respondToDanger();
    }
 
-   AndroRobot(){
+   ArisSetyawan_11000001(){
      super("Andro robot v1");
    }
 
@@ -78,7 +80,7 @@ class ArissanRobot
 {
   private boolean power = false;
   private int energyLevel = 0; 
-  private final int MIN_WORKING_ENERGY = 30; 
+  private final int MIN_WORKING_ENERGY = 10; // jawaban soal nomer 3; 
   private boolean charging = false;
 
   private boolean enemyDetect = false;
@@ -122,6 +124,7 @@ class ArissanRobot
       else
       {      
         this.verbose("Enemy detected on front");
+        this.verbose("apa kabar ? sudah siap tempur?"); //jawaban nomer 6
         this.dangerFront = true;
       }
     }
@@ -139,6 +142,7 @@ class ArissanRobot
 
   protected void reloadAmo(){
     if(this.power){
+      verbose("amunisi habis, sedang reload!"); // jawaban soal nomer 2;
       verbose("before reload amo: " + this.amoStock);
       this.amoStock += 1;
       verbose("after reload amo: " + this.amoStock);
@@ -179,8 +183,8 @@ class ArissanRobot
          {
             if(this.amoStock > 0)
             {
-               int bullets = 3;
-               int efforts = 1;
+               int bullets = 4; //jawaban nomer 4, dari 3 menjadi 4
+               int efforts = 2; // dari 1 menjadi 2
                char charBullet = '\u1028';
                verbose(">> Initializing to fire on");
                verbose("Before: energyLevel: " + this.energyLevel);
@@ -232,7 +236,7 @@ class ArissanRobot
           verbose("stay to fire");
         }
         else{
-          this.dangerLeft = true;
+          this.dangerRight = true; // jawaban nomer 5, dibelakang perlu memutar 2 x,karena lewat harus muter ke kanan maka diset bahaya di kanan dan diputar kanan 2x
           this.turnPosition();
           this.turnPosition();
         }
@@ -286,6 +290,16 @@ class ArissanRobot
     line();
   }
 
+  // jawaban nomer 7, dengan protected agar bisa dipanggil di kelas turunannya
+  // dibagi empat karena tiap menembak 4 peluru keluar
+  // di hardcode disini karena menthod mengeluarkan peluru bervairable local jumlah
+  // pelure per tembakan dengan 4 shg tidak bisa diakses di method ini.
+  protected void sisaMenembak(){
+    int sisa = 0;
+    sisa = this.amoStock / 4;
+    this.verbose("Sisa kesempatan menembak: "+ sisa+" kali");
+  }
+
   ArissanRobot(String name)
   {
     this.line();
@@ -305,7 +319,8 @@ subject email: NIM - nama
 file diattached dalam email
 terlambat lebih dari 10 menit, tidak diterima.
 
->> revisi program diatas agar <<<
+>> revisi program diatas agar <<
+
 1) saya dapat compile dan run menjadi sbb:
 >>(point 10);
 $ javac uts/NamaAnda_NIM.java
