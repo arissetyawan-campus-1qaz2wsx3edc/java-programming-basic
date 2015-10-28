@@ -6,7 +6,7 @@
 
 package operators;
 
-public class AndroRobot extends JavaRobot{
+public class AndroRobot extends ArissanRobot{
    public static void main(String[] argv){
       AndroRobot ar_0 = new AndroRobot();
       ar_0.setPower(false);
@@ -74,7 +74,7 @@ public class AndroRobot extends JavaRobot{
    }
 }
 
-class JavaRobot
+class ArissanRobot
 {
   private boolean power = false;
   private int energyLevel = 0; 
