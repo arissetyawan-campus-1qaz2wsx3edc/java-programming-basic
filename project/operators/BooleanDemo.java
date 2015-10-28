@@ -1,3 +1,9 @@
+/*  
+* This is to demo with boolean, constructor, access modifers, 
+* fixed number operators, expression, statements, etc
+* arissetyawan.email@gmail.com
+*/
+
 package operators;
 
 public class BooleanDemo

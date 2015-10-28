@@ -1,5 +1,6 @@
 /*  
-* This is to demo with boolean
+* This is to demo with boolean, constructor, access modifers, 
+* fixed number operators, expression, statements, logic, etc
 * arissetyawan.email@gmail.com
 */
 
@@ -7,6 +8,15 @@ package operators;
 
 public class AndroRobot extends JavaRobot{
    public static void main(String[] argv){
+      AndroRobot ar_0 = new AndroRobot();
+      ar_0.setPower(false);
+      ar_0.setEnergyLevel(100);
+      ar_0.setAmoStock(100);
+      ar_0.resumeStats();
+      ar_0.respondToDanger();
+      ar_0.fireEnemy();
+      ar_0.fireEnemy();
+      
       AndroRobot ar = new AndroRobot();
       ar.setPower(true);
       ar.setEnergyLevel(100);
@@ -18,6 +28,7 @@ public class AndroRobot extends JavaRobot{
       ar.setEnemy(true, 0);
       ar.respondToDanger();
       
+      ar.setPower(true);
       ar.printLine();
       ar.setEnemy(true, 2);
       ar.respondToDanger();
@@ -87,34 +98,36 @@ class JavaRobot
 
   protected void setEnemy(boolean enemyDetect, int position)
   {
-    this.resetPositions();
-    this.enemyDetect = enemyDetect;
-    if(position==0)
-    {
-      this.verbose("Enemy detected on left");
-      this.dangerLeft = true;
-    }
+    if(this.power){
+      this.resetPositions();
+      this.enemyDetect = enemyDetect;
+      if(position==0)
+      {
+        this.verbose("Enemy detected on left");
+        this.dangerLeft = true;
+      }
 
-    else if(position==1)
-    {
-      this.verbose("Enemy detected on right"); 
-      this.dangerRight = true;
-    }
+      else if(position==1)
+      {
+        this.verbose("Enemy detected on right"); 
+        this.dangerRight = true;
+      }
 
-    else if(position==2)
-    {      
-      this.verbose("Enemy detected on back");
-      this.dangerBack = true;
-    }
+      else if(position==2)
+      {
+        this.verbose("Enemy detected on back");
+        this.dangerBack = true;
+      }
 
-    else
-    {      
-      this.verbose("Enemy detected on front");
-      this.dangerFront = true;
+      else
+      {      
+        this.verbose("Enemy detected on front");
+        this.dangerFront = true;
+      }
     }
 
   }
-  
+
   protected void setPower(boolean powerInput)
   {
     this.power = powerInput;
@@ -125,53 +138,63 @@ class JavaRobot
   }
 
   protected void reloadAmo(){
-    verbose("before reload amo: " + this.amoStock);
-    this.amoStock += 1;
-    verbose("after reload amo: " + this.amoStock);
+    if(this.power){
+      verbose("before reload amo: " + this.amoStock);
+      this.amoStock += 1;
+      verbose("after reload amo: " + this.amoStock);
+    }
   }
 
   protected void setAmoStock(int amoInput)
   {
+    if(this.power){
     this.amoStock = amoInput;
+    }
   }
 
   protected void setEnergyLevel(int energyInput)
   {
-    this.energyLevel = energyInput;
+    if(this.power){
+       this.energyLevel = energyInput;
+    }
   }
 
   protected void fireEnemy()
   {
-    if(!this.power || this.energyLevel < this.MIN_WORKING_ENERGY){
-      gameOver();
-    }
-    else
-    {
-       if(this.energyLevel < this.MIN_WORKING_ENERGY)
-       {
-          this.verbose("energy level < working energy");
-          this.gameOver();
-          this.chargingOn();
-       }
-       else
-       {
-          if(this.amoStock > 0)
-          {
-             verbose(">> Initializing to fire on");
-             verbose("Before: energyLevel: " + this.energyLevel);
-             verbose("Before: amoStock: " + this.amoStock);
-             this.fireOn = true;
-             this.energyLevel -= 1;
-             this.amoStock -= 1;
 
-             verbose("after: energyLevel: " + this.energyLevel);
-             verbose("after: amoStock: " + this.amoStock);
-          }
-          else
-          {           
-           verbose("amo stock < 0");
-           verbose("please reload amo");
-          }
+    if(this.power)
+    {
+      if(this.energyLevel < this.MIN_WORKING_ENERGY){
+        gameOver();
+      }
+      else
+      {
+         if(this.energyLevel < this.MIN_WORKING_ENERGY)
+         {
+            this.verbose("energy level < working energy");
+            this.gameOver();
+            this.chargingOn();
+         }
+         else
+         {
+            if(this.amoStock > 0)
+            {
+               verbose(">> Initializing to fire on");
+               verbose("Before: energyLevel: " + this.energyLevel);
+               verbose("Before: amoStock: " + this.amoStock);
+               this.fireOn = true;
+               this.energyLevel -= 1;
+               this.amoStock -= 1;
+
+               verbose("after: energyLevel: " + this.energyLevel);
+               verbose("after: amoStock: " + this.amoStock);
+            }
+            else
+            {           
+             verbose("amo stock < 0");
+             verbose("please reload amo");
+            }
+         }
        }
     } 
   }
@@ -180,38 +203,43 @@ class JavaRobot
     System.out.println("---------------");
   }
 
-  private void gameOver(){
-      verbose("gameover");  
+  private void gameOver(){  
+    if(this.power){
+      verbose("gameover");
+    }
   }
 
   private void turnPosition()
   {
-    if(this.energyLevel >= this.MIN_WORKING_ENERGY){
-      if(this.dangerLeft){
-        verbose("turn left");
-      }
-      else if(this.dangerRight){
-        verbose("turn right");
-      }
-      else if(this.dangerFront){
-        verbose("stay to fire");
-      }
-      else{
-        this.dangerLeft = true;
-        this.turnPosition();
-        this.turnPosition();
-      }
-    }
-    else
+    if(this.power)
     {
-      gameOver();
+      if(this.energyLevel >= this.MIN_WORKING_ENERGY){
+        if(this.dangerLeft){
+          verbose("turn left");
+        }
+        else if(this.dangerRight){
+          verbose("turn right");
+        }
+        else if(this.dangerFront){
+          verbose("stay to fire");
+        }
+        else{
+          this.dangerLeft = true;
+          this.turnPosition();
+          this.turnPosition();
+        }
+      }
+      else
+      {
+        gameOver();
+      }
     }
   }
 
   protected void respondToDanger(){
     if(!this.power)
     {
-       verbose("im off");
+       verbose("im off, Sir !");
        gameOver();
     }
     
@@ -238,21 +266,23 @@ class JavaRobot
 
   protected void resumeStats(){
     line();
-    verbose("resuming stats...");
+    verbose("Resuming stats...");
     line();
     this.verbose("Power: " + power);
     this.verbose("Initializing...");
-    this.verbose("energyLevel: " + energyLevel);
     this.verbose("charging: " + charging);
-    this.verbose("enemyDetect: " + enemyDetect);
+    this.verbose("energyLevel: " + energyLevel);
     this.verbose("amoStock: " + amoStock);
+    this.verbose("enemyDetect: " + enemyDetect);
+    line();
   }
 
   JavaRobot(String name)
   {
+    this.line();
     this.verbose("Hello...");
     this.verbose("My name is " + name);
-    this.line();
+    this.verbose("Please turn the power on to continue..");
     this.line();
   }
 
