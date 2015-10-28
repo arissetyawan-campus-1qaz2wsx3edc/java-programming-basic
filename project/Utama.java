@@ -11,7 +11,7 @@ public class Utama
       SukarnoWijoyo sr = new SukarnoWijoyo();
       //System.out.println(sr.nim);
       sr.printNim();
-      System.out.println(sr.ADDRESS);   
+      //System.out.println(sr.ADDRESS);   
       System.out.println(SukarnoWijoyo.ADDRESS1); 
       System.out.println(SukarnoWijoyo.ADDRESS);      
    }
@@ -21,7 +21,7 @@ class SukarnoWijoyo
 {
 
    public String nim = "11100000101";
-   public final String ADDRESS = "Jl. Raya Surabaya KM 33";
+   private final static String ADDRESS = "Jl. Raya Surabaya KM 33";
    public final static String ADDRESS1 = "Jl. Raya Surabaya KM 34";
 
    SukarnoWijoyo() //constructor

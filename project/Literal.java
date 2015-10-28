@@ -16,7 +16,7 @@ class MyInteger
 {
 
   private int speed = 300;
-  private int wind = 0xC; //12
+  private int wind = 0xC; //10 hexa, dec, octal 1-9, 
   private int power = 014; //12 : 0 + 1 x 8^1 + 4 x 8^0 = 8 + 4
 
   public void print()

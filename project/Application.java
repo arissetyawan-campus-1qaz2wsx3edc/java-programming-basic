@@ -63,7 +63,7 @@ class Variable
 
 class Constant
 {
-    protected final static String NAME = "Sukijah";
+    protected final static String NAME = "Sukijah"; //defining constant with protected
     private final static String ADDRESS = "Tegal";
     public final String ADDRESS1 = "Pemalang";
 
