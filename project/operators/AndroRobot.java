@@ -179,13 +179,21 @@ class ArissanRobot
          {
             if(this.amoStock > 0)
             {
+               int bullets = 3;
+               int efforts = 1;
+               char charBullet = '\u1028';
                verbose(">> Initializing to fire on");
                verbose("Before: energyLevel: " + this.energyLevel);
                verbose("Before: amoStock: " + this.amoStock);
                this.fireOn = true;
-               this.energyLevel -= 1;
-               this.amoStock -= 1;
-
+               verbose("Fire !:");
+               for(int i=1; i <= this.amoStock; i++)
+               {
+                  System.out.print(charBullet);
+               }
+               this.energyLevel -= efforts;
+               this.amoStock -= bullets;
+               verbose("");
                verbose("after: energyLevel: " + this.energyLevel);
                verbose("after: amoStock: " + this.amoStock);
             }
